@@ -37,7 +37,7 @@
 
 ## 🧩 Tværgående emner
 
-Disse filer er vores primære eksamenshjælp — censor spørger i *emner*, ikke uger.
+Disse filer er vores primære eksamenshjælp - censor spørger i *emner*, ikke uger.
 
 | Emne | Fil |
 |------|-----|
