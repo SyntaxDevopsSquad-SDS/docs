@@ -1,7 +1,7 @@
 # 📚 SyntaxDevOpsSquad – DevOps Eksamensdokumentation
 
 > **Formål:** Samle pensum, tracke læringsmål og øve os til mundtlig eksamen.
-> Denne fil er jeres hub. Alt starter her.
+> Denne fil er vores hub. Alt starter her.
 
 ---
 
@@ -37,7 +37,7 @@
 
 ## 🧩 Tværgående emner
 
-Disse filer er jeres primære eksamenshjælp — censor spørger i *emner*, ikke uger.
+Disse filer er vores primære eksamenshjælp — censor spørger i *emner*, ikke uger.
 
 | Emne | Fil |
 |------|-----|
