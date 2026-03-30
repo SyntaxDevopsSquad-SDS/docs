@@ -9,7 +9,7 @@
 
 | | |
 |---|---|
-| ✅ [Læringsmål Master-tjekliste](./læringsmål-master.md) | Se hvad der er styr på — og hvad der mangler |
+| ✅ [Læringsmål Master-tjekliste](./læringsmål-master.md) | Se hvad der er styr på - og hvad der mangler |
 | 🔗 [Ressourcer & Links](./ressourcer.md) | Artikler, docs, tools og litteratur |
 | 📂 [Uger](#-uger) | Pensum og quiz per uge |
 | 🧩 [Emner](#-tværgående-emner) | Eksamensrelevante emner på tværs af uger |
