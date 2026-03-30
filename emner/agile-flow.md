@@ -1,7 +1,7 @@
 # 🧩 Emne: agile-flow
 
 ## Hvad er det?
-*(Definer emnet med egne ord — 2-3 sætninger)*
+*(Definer emnet med egne ord - 2-3 sætninger)*
 
 ## Hvorfor er det vigtigt i DevOps?
 *(Kontekst og formål)*
