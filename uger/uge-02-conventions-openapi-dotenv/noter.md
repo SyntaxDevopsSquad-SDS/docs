@@ -280,10 +280,10 @@ Dokumentationen fungerer som kontrakt mellem frontend og backend. Reducerer komm
 
 **Design-First (Top-Down):**
 
-1.Skriv OpenAPI spec først
-2.Review med team (frontend + backend)
-3.Generate server stubs fra spec
-4.Implementer business logic
+1. Skriv OpenAPI spec først
+2. Review med team (frontend + backend)
+3. Generate server stubs fra spec
+4. Implementer business logic
 
 
 **Fordel:** API design diskuteret før implementation. Fejl opdages tidligt.
