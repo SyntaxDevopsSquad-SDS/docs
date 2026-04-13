@@ -135,11 +135,11 @@ Closes #104
 4. **Professionalisme** — Klar struktur til eksamensdemonstration
 
 **Regler:**
-- Imperative mood: "add" ikke "added"
-- Lowercase type: `feat:` ikke `Feat:`
-- Ingen punktum til sidst
-- Body forklarer *hvorfor*, ikke *hvad* (koden viser hvad)
-- Reference issues: `Closes #104`
+1. Imperative mood: "add" ikke "added"
+2. Lowercase type: `feat:` ikke `Feat:`
+3. Ingen punktum til sidst
+4. Body forklarer *hvorfor*, ikke *hvad* (koden viser hvad)
+5. Reference issues: `Closes #104`
 
 ---
 
@@ -280,10 +280,10 @@ Dokumentationen fungerer som kontrakt mellem frontend og backend. Reducerer komm
 
 **Design-First (Top-Down):**
 
-Skriv OpenAPI spec først
-Review med team (frontend + backend)
-Generate server stubs fra spec
-Implementer business logic
+1.Skriv OpenAPI spec først
+2.Review med team (frontend + backend)
+3.Generate server stubs fra spec
+4.Implementer business logic
 
 
 **Fordel:** API design diskuteret før implementation. Fejl opdages tidligt.
