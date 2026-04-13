@@ -68,12 +68,27 @@ Se [noter.md](./noter.md)
 - SSH
 - Deployment Considerations
 
-**Opgaver:**
-- [Read about GitHub Actions](https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._GitHub_Actions/02._github_actions.md)
-- [GitHub PR template](https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._GitHub_Actions/03._github_pr_template.md)
+**Topics**
+- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/02._github_actions.md
+- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/03._github_issues_workflow.md
+- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/04._github_secrets.md
 - [EK Azure Resources](https://github.com/anderslatif/EK_Azure)
-- [Keep rewriting](https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/03._GitHub_Actions/02._After/keep_rewriting.md)
-- [Deploy](https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/03._GitHub_Actions/02._After/deploy.md)
+- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/05._azure.md
+
+  **  Other cloud services and cloud providers**
+- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/06._more_cloud.md
+
+  **More about SSH**
+  - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/07._ssh.md
+
+  **Deployment considerations**
+  - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/08._deployment_considerations.md
+ **Read about GitHub Actions**
+- Motivation: Learn the correct terminology surrounding GitHub Actions.
+- https://docs.github.com/en/actions/get-started/understand-github-actions
+
+** How to create a PR template in Github**
+- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/03._Github_Actions_Cloud_Azure_Deploy/01._Before/github_pr_template.md
 
 **Vores Implementation:**
 - `.github/workflows/ci.yml` - [GitHub](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/blob/main/.github/workflows/ci.yml)
@@ -82,10 +97,8 @@ Se [noter.md](./noter.md)
 
 
 **Eksterne Links:**
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [Azure Free Tier](https://azure.microsoft.com/en-us/pricing/free-services/)
 - [SSH Key Guide](https://www.ssh.com/academy/ssh/keygen)
-- [systemd Service Guide](https://www.freedesktop.org/software/systemd/man/systemd.service.html)
+
 
 ---
 
