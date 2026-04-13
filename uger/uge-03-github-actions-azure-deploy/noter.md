@@ -165,7 +165,7 @@ nano scripts/virtual_machine/vm_create.sh
 
 **Output:**
 VM running
-PublicIpAddress: 51.103.136.200
+PublicIpAddress: (VORES_VM_IP)
 
 **Gratis Tier Overvejelser:**
 
@@ -398,7 +398,7 @@ az vm restart --resource-group vmtest2 --name vm2
 az vm show -d --resource-group vmtest2 --name vm2 --query publicIps -o tsv
 ```
 
-IP forbliver `51.103.136.200` ✓
+IP forbliver `(VORES_VM_IP)` ✓
 
 ---
 
@@ -510,7 +510,7 @@ WhoKnows kører med ny kode ✓
 
 - **Size:** Standard_B2ats_v2 (gratis tier)
 - **OS:** Ubuntu 22.04 LTS
-- **IP:** Static (`51.103.136.200`)
+- **IP:** Static (`(VORES_VM_IP)`)
 - **Region:** Switzerland North
 - **Ports open:** 22 (SSH), 8080 (HTTP)
 
@@ -596,7 +596,7 @@ docker-compose -f /opt/whoknows/docker-compose.yml up -d
 | Secret Name | Værdi | Bruges til |
 |-------------|-------|------------|
 | `SSH_PRIVATE_KEY` | Private SSH key | CD deployment til Azure VM |
-| `SERVER_IP` | `51.103.136.200` | Azure VM IP address |
+| `SERVER_IP` | `(VORES_VM_IP)` | Azure VM IP address |
 | `CR_PAT` | GitHub Personal Access Token | Push Docker images til GHCR |
 
 **Sikret at:**
@@ -626,7 +626,7 @@ Vi bruger en hybrid Docker-baseret approach. CI builder og pusher Docker image t
 
 **"Hvorfor satte I VM IP til static?"**
 
-Fordi dynamic IP ændrer sig ved VM restart. Vores DNS A-record peger til IP'en, og vores CD workflow SSH'er til IP'en. Hvis IP'en skiftede, skulle vi opdatere både DNS og GitHub Secrets hver gang. Static IP sikrer at `51.103.136.200` forbliver konstant.
+Fordi dynamic IP ændrer sig ved VM restart. Vores DNS A-record peger til IP'en, og vores CD workflow SSH'er til IP'en. Hvis IP'en skiftede, skulle vi opdatere både DNS og GitHub Secrets hver gang. Static IP sikrer at `(VORES_VM_IP)` forbliver konstant.
 
 **"Hvordan sikrer I at secrets ikke lækker i GitHub Actions?"**
 
