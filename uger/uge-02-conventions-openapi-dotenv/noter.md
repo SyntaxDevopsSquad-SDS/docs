@@ -99,10 +99,6 @@ git commit -m "updates"
 git commit -m "feat: add integration tests for API endpoints"
 ```
 
-**Format:**
-<type>: <description>
-[optional body]
-[optional footer]
 
 **Types vi bruger:**
 
@@ -179,9 +175,11 @@ var userName string
 ```
 
 **Go Filnavne:**
+```
 database.go              # lowercase
 routes.go                # lowercase
 integration_test.go      # underscore kun for _test suffix
+```
 
 **Database (SQL):**
 ```sql
@@ -382,6 +380,7 @@ I vores projekt: **JA** — vi er public på GitHub uden leaked secrets.
 **Vores valg: Monorepo**
 
 Alt i ét Git repository:
+```
 devops-syntaxsquad/
 ├── implementations/
 │   ├── go/          # Aktuel backend
@@ -389,6 +388,7 @@ devops-syntaxsquad/
 ├── docs/            # Fælles dokumentation
 ├── .github/         # Fælles CI/CD workflows
 └── server-config/   # Server setup scripts
+```
 
 **Fordele:**
 
