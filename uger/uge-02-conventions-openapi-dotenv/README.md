@@ -58,24 +58,18 @@ Se [noter.md](./noter.md)
 - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/02._Conventions_OpenAPI_DotEnv/03._openapi.md
 - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/02._Conventions_OpenAPI_DotEnv/04._monolith_monorepo_multirepo.md
 - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/02._Conventions_OpenAPI_DotEnv/05._environment_variables.md
+- 
 **Before class Assignments**
 - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/02._Conventions_OpenAPI_DotEnv/01._Before/learn_branching.md
 - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/02._Conventions_OpenAPI_DotEnv/01._Before/git_advanced.md
 - **Get aquainted with how to setup SQLite and create all the WhoKnows queries in Go and Ruby**
 - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/02._Conventions_OpenAPI_DotEnv/01._Before/go_and_ruby_sqlite_setup.md
+- 
 **After class**
   - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/02._Conventions_OpenAPI_DotEnv/02._After/commence_the_rewrite.md
   - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/02._Conventions_OpenAPI_DotEnv/02._After/generate_openapi_specification.md
   - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/02._Conventions_OpenAPI_DotEnv/02._After/generate_openapi_spec_in_postman.md
 
-**Opgaver:**
-- [Problems with the Codebase](https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/01._Introduction/02._After/problems_with_the_codebase.md)
-- Go and Ruby SQLite setup
-- Decide on a framework
-- Commence the rewrite
-- Generate OpenAPI specification
-- Kanban GitHub project
-- Generate OpenAPI Postman
 
 **Vores Implementation:**
 - `.gitignore` - [GitHub](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/blob/main/.gitignore)
