@@ -75,4 +75,9 @@
 - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/09._Testing_Security/02._After/implement_tests.md
 
 ## 🧩 Se også i emner/
-*(Hvilke tværgående emner dækker denne uge?)*
+- **[emner/devsecops-shift-left.md](../../emner/devsecops-shift-left.md)** - DevSecOps principper, Shift-Left mentalitet, Security Gates i CI/CD
+- **[emner/security-testing.md](../../emner/security-testing.md)** - SAST vs DAST, fail2ban, Dependabot, Docker security scanning
+- **[emner/ci-cd.md](../../emner/ci-cd.md)** - Continuous Testing, Quality Gates, Test Pyramid, GitHub Actions matrix testing
+- **[emner/docker.md](../../emner/docker.md)** - Docker firewall bypass problem, IP range limiting, container security
+- **[emner/iptables-firewalls.md](../../emner/iptables-firewalls.md)** - iptables vs ufw, Docker firewall interaction, fail2ban konfiguration
+- **[emner/github-actions.md](../../emner/github-actions.md)** - Hash-pinning, secrets management, native ssh/scp vs third-party actions
