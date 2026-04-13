@@ -75,15 +75,16 @@ Se [noter.md](./noter.md)
 - [EK Azure Resources](https://github.com/anderslatif/EK_Azure)
 - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/05._azure.md
 
-  **  Other cloud services and cloud providers**
+**Other cloud services and cloud providers**
 - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/06._more_cloud.md
 
-  **More about SSH**
+**More about SSH**
   - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/07._ssh.md
 
-  **Deployment considerations**
-  - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/08._deployment_considerations.md
- **Read about GitHub Actions**
+**Deployment considerations**
+- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/08._deployment_considerations.md
+
+**Read about GitHub Actions**
 - Motivation: Learn the correct terminology surrounding GitHub Actions.
 - https://docs.github.com/en/actions/get-started/understand-github-actions
 
