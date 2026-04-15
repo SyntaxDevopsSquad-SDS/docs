@@ -94,6 +94,7 @@ Vi praktiserer DevOps-principper ved at have fuld CD (push til main deployer aut
 - [ ] Hvad er Big Bang Deployment og hvorfor er det problematisk?
 
 ## Relevante uger
+- Uge 1 (Introduktion til DevOps, What is DevOps?)
 - Uge 5 (Docker, Continuous Delivery, The Simulation)
 - Uge 6 (Docker Compose, DevOps Kultur, Agile, Continuous Delivery)
 - Uge 8 (DevOps is People, Incident Response, Postmortem)
