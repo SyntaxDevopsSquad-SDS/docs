@@ -30,9 +30,8 @@
 | [08](./uger/uge-08-devops-people-incident-response/) | 19. mar | DevOps is People, Postmortem, Continuous Deployment | ✅ |
 | [09](./uger/uge-09-devsecops-security-testing/) | 26. mar | DevSecOps, SAST/DAST, fail2ban, Shift-Left | ✅ |
 | [10](./uger/uge-10-databaser-orm-webscraping/) | 9. apr | Databaser, ORM, Migrations, Web Scraping | 🔄 |
-| [11](./uger/uge-11-monitoring-logging/) | 16. apr | Logging, Monitoring, KPIs, Prometheus + Grafana | 🔄 |
-| [12](./uger/uge-12-iac-terraform/) | 22. apr | Infrastructure as Code, Terraform | 🔄 |
-
+| [11](./uger/uge-11-monitoring-logging/) | 16. apr | Logging, Monitoring, KPIs, Prometheus + Grafana | ✅ |
+| [12](./uger/uge-12-iac-terraform/) | 23. apr | IaC, Terraform, Serverless | 🔄 |
 > **Status-nøgle:** ✅ Gennemgået og noter klar · 🔄 I gang · ⬜ Ikke startet
 
 ---
@@ -53,6 +52,9 @@ Disse filer er vores primære eksamenshjælp - censor spørger i *emner*, ikke u
 | Cloud & Azure | [emner/cloud-azure.md](./emner/cloud-azure.md) |
 | Agile & Flow | [emner/agile-flow.md](./emner/agile-flow.md) |
 | IPTables & Firewalls | [emner/iptables-firewalls.md](./emner/iptables-firewalls.md) |
+| Monitoring | [emner/monitoring.md](./emner/monitoring.md) |
+| Logging | [emner/logging.md](./emner/logging.md) |
+| IaC & Terraform | [emner/iac-terraform.md](./emner/iac-terraform.md) |
 
 ---
 
