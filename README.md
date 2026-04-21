@@ -31,6 +31,7 @@
 | [09](./uger/uge-09-devsecops-security-testing/) | 26. mar | DevSecOps, SAST/DAST, fail2ban, Shift-Left | ✅ |
 | [10](./uger/uge-10-databaser-orm-webscraping/) | 9. apr | Databaser, ORM, Migrations, Web Scraping | 🔄 |
 | [11](./uger/uge-11-monitoring-logging/) | 16. apr | Logging, Monitoring, KPIs, Prometheus + Grafana | 🔄 |
+| [12](./uger/uge-12-iac-terraform/) | 22. apr | Infrastructure as Code, Terraform | 🔄 |
 
 > **Status-nøgle:** ✅ Gennemgået og noter klar · 🔄 I gang · ⬜ Ikke startet
 
