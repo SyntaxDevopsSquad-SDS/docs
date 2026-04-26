@@ -51,6 +51,19 @@ Terraform er **deklarativt** – du beskriver ønsket tilstand, Terraform sammen
 
 ## Terraform
 
+### HCL – sproget bag Terraform
+
+Terraform konfigureres i **HCL** (HashiCorp Configuration Language) via `.tf` filer. HCL er deklarativt og bygget op af **blokke**, **argumenter** og **expressions**:
+
+```hcl
+<BLOKTYPE> "<LABEL>" "<LABEL>" {
+  # argumenter
+  <IDENTIFIER> = <EXPRESSION>
+}
+```
+
+Providers og modules findes via **Terraform Registry**: [registry.terraform.io](https://registry.terraform.io)
+
 ### Kernebegreber
 
 | Begreb | Forklaring |
@@ -66,10 +79,11 @@ Terraform er **deklarativt** – du beskriver ønsket tilstand, Terraform sammen
 
 ```bash
 terraform init      # Download providers og initialiser projekt
-terraform fmt       # Formatér .tf filer
-terraform validate  # Valider konfigurationssyntaks
+terraform fmt       # Formatér .tf filer (retter indrykning m.m. – validerer ikke logik)
+terraform validate  # Valider konfigurationssyntaks (kan køres uden init)
 terraform plan      # Preview af ændringer (ingen udførelse)
 terraform apply     # Udfør ændringer mod infrastrukturen
+terraform refresh   # Synkroniser state med faktisk tilstand i skyen (ved drift udefra Terraform)
 terraform destroy   # Nedlæg al provisioneret infrastruktur
 ```
 
@@ -81,6 +95,50 @@ terraform destroy   # Nedlæg al provisioneret infrastruktur
                                               sammenligner med
                                              terraform.tfstate
 ```
+
+### Workspaces
+
+Workspaces er isolerede state-miljøer – sammenlignelige med git branches, men **kun for state** (ingen merge, ingen divergerende kodebase).
+
+```bash
+terraform workspace list            # List alle workspaces
+terraform workspace new <navn>      # Opret og skift til nyt workspace
+terraform workspace select <navn>   # Skift workspace
+terraform workspace delete <navn>   # Slet workspace
+```
+
+Typisk brug: `default`, `dev`, `staging`, `prod` – hver med sin egen state gemt i `terraform.tfstate.d/`.
+
+### Eksempel – azurerm Provider
+
+```hcl
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=3.0.0"
+    }
+  }
+}
+
+provider "azurerm" {
+  features {}   # ← obligatorisk fra version 2.0+, mangler den fejler plan og apply
+}
+
+resource "azurerm_resource_group" "example" {
+  name     = "example-resources"
+  location = "North Europe"
+}
+
+resource "azurerm_virtual_network" "example" {
+  name                = "example-network"
+  resource_group_name = azurerm_resource_group.example.name      # <- reference
+  location            = azurerm_resource_group.example.location  # <- reference
+  address_space       = ["10.0.0.0/16"]
+}
+```
+
+> Ressource-referencer (`azurerm_resource_group.example.name`) bruges til at bygge en **afhængighedsgraf** – Terraform opretter ressourcer i den rigtige rækkefølge automatisk.
 
 ### Eksempel – GitHub Provider
 
@@ -108,8 +166,14 @@ resource "github_repository" "whoknows" {
 ### Begrænsninger og problemer
 
 - **State-filen** er en single point of failure – mistes den mister Terraform overblikket
-- **State locking** er nødvendigt i teams for at undgå konflikter (løses med remote backend fx Terraform Cloud eller Azure Blob)
-- **Out-of-band changes** – manuelle ændringer i konsollen opdages ikke automatisk
+- **State-filen må IKKE committes til Git** – kan indeholde secrets, og merge-konflikter kan korruptere den
+- **State locking** er nødvendigt i teams for at undgå konflikter
+- **Out-of-band changes** – manuelle ændringer i konsollen opdages ikke automatisk (`terraform refresh` hjælper)
+- **Ingen standardiseret løsning** på state-problemet i teams – løses typisk med remote backend:
+  - Azure Storage Account (med state locking)
+  - AWS S3 + DynamoDB
+  - Terraform Cloud
+  - Google Cloud Storage
 - **Ikke alle ressourcer** understøttes af alle providers
 - **Deklarativ logik** kan blive kompleks ved betingede ressourcer
 
@@ -123,3 +187,7 @@ resource "github_repository" "whoknows" {
 - Hvilke problemer løser IaC i en DevOps-kontekst?
 - Hvad sker der når du kører `terraform plan` vs. `terraform apply`?
 - Hvordan relaterer IaC til reproducerbarhed og consistency i vores projekt?
+- Hvad er et workspace i Terraform, og hvornår er det nyttigt?
+- Hvorfor må state-filen ikke ligge i Git, og hvordan løser man det i et team?
+- Hvad er forskellen på `terraform validate` og `terraform plan`?
+- Hvad er `terraform refresh`, og hvornår har man brug for det?
