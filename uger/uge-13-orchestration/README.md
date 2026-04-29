@@ -1,4 +1,4 @@
-# Uge 13 — Orchestration, Kubernetes & Resilience
+# Uge 13 -  Orchestration, Kubernetes & Resilience
 
 > 📅 Dato: 29. april 2026
 
