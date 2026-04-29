@@ -57,15 +57,15 @@ Disse filer er vores primære eksamenshjælp — censor spørger i emner, ikke u
 | Monitoring | [emner/monitoring.md](./emner/monitoring.md) |
 | Logging | [emner/logging.md](./emner/logging.md) |
 | IaC & Terraform | [emner/iac-terraform.md](./emner/iac-terraform.md) |
-| Introduction (uge 13) | [emner/uge13-introduction.md](./emner/uge13-introduction.md) |
-| Deploying Infrastructure / Config Management | [emner/uge13-deploying-infrastructure.md](./emner/uge13-deploying-infrastructure.md) |
-| Deployment Strategies | [emner/uge13-deployment-strategies.md](./emner/uge13-deployment-strategies.md) |
-| Orchestration | [emner/uge13-orchestration.md](./emner/uge13-orchestration.md) |
-| Kubernetes | [emner/uge13-kubernetes.md](./emner/uge13-kubernetes.md) |
-| Kubernetes - Hands-on | [emner/uge13-kubernetes-handson.md](./emner/uge13-kubernetes-handson.md) |
-| Resilience | [emner/uge13-resilience.md](./emner/uge13-resilience.md) |
-| Maintenance | [emner/uge13-maintenance.md](./emner/uge13-maintenance.md) |
-| Course Conclusion | [emner/uge13-course-conclusion.md](./emner/uge13-course-conclusion.md) |
+| Introduction | [emner/introduction.md](./emner/introduction.md) |
+| Deploying Infrastructure / Config Management | [emner/deploying-infrastructure.md](./emner/deploying-infrastructure.md) |
+| Deployment Strategies | [emner/deployment-strategies.md](./emner/deployment-strategies.md) |
+| Orchestration | [emner/orchestration.md](./emner/orchestration.md) |
+| Kubernetes | [emner/kubernetes.md](./emner/kubernetes.md) |
+| Kubernetes - Hands-on | [emner/kubernetes-handson.md](./emner/kubernetes-handson.md) |
+| Resilience | [emner/resilience.md](./emner/resilience.md) |
+| Maintenance | [emner/maintenance.md](./emner/maintenance.md) |
+| Course Conclusion | [emner/course-conclusion.md](./emner/course-conclusion.md) |
 
 ---
 
