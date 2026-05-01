@@ -77,9 +77,12 @@ SonarCloud fandt **74 issues** i alt ved første scan.
 | Text contrast i CSS | Accessibility-forbedring men ikke funktionskritisk i et studieprojekt med begrænset scope. |
 | Terraform SSH åben for alle IP'er | Intentionelt - vi skifter netværk (skole, hjem, VM-adgang) og kan ikke låse til én IP. Alternativet ville bryde adgangen. |
 | `====` konstant i `terraform/inline_commands.sh` | Rent kosmetisk separator i et shell-script. Ingen sikkerhedsmæssig eller funktionel relevans. |
+| SHA-pinning af `golangci-lint-action@v7` | Supply chain security best practice relevant i produktion, men overkill for et studieprojekt. Tags som `@v7` er tilstrækkeligt stabile for vores use case. Acknowledged i SonarCloud. |
+| SHA-pinning af `sonarqube-scan-action@v5` | Samme begrundelse som ovenstående. Acknowledged i SonarCloud. |
 
-### Eksempel fra vores repo
+### Eksempler fra vores repo
 - [PR #148 - fix/sonar-issues](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/pull/148)
+- [PR #149 - fix/sonar-action-deprecated](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/pull/149)
 
 ### Kritisk refleksion over toolet
 
@@ -110,7 +113,7 @@ Succesfulde registreringer: tilnærmelsesvis nul i hele perioden.
 #### 🟢 Uptime & Latency
 Backend uptime holder **99.8–100 %** over hele perioden. Request latency p95 er under **0.1 sekunder** på stort set alle endpoints - med én enkelt spike der hurtigt normaliserede sig. Go-migrationen fra Python har tydeligt haft effekt her.
 
-#### 🔍 Top Search Terms
+####  Top Search Terms
 Dashboardet tracker reelle søgetermer: *"apple app store 12-month subscription"*, *"bernie sanders"*, *"is the weather app down"*, *"ja morant team"* - det bekræfter at vores FTS5-søgning bliver ramt af rigtige (eller simulerede) brugere.
 
 ### Hvad vi indså - og hvad der bør fixes
