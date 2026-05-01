@@ -44,12 +44,48 @@ Vi er gået fra nul kendskab til at navigere DevOps-principperne i praksis - uge
 
 ## Opgave 3 – Software Quality
 
-> 🔄 **Følges op** – Vi vender tilbage til denne opgave efter SonarCloud-analyse er gennemført og findings er diskuteret som gruppe.
+**Tool:** SonarCloud (statisk kodeanalyse, gratis for open source)
 
-**Opsætning (SonarCloud):**
-1. Log ind på [sonarcloud.io](https://sonarcloud.io) via GitHub
-2. Klik `+` → `Analyze new project` → vælg WhoKnows-repoet
-3. Tilføj SonarCloud-step i GitHub Actions CI-pipeline så det kører ved fremtidige pushe
+### Opsætning og konfiguration
+
+Vi integrerede SonarCloud direkte i vores CI-pipeline via GitHub Actions. Vi valgte **"Number of days" (30 dage)** som new code definition fremfor "Previous version" - begrundelsen er at vores pre-commit hook og linting allerede fanger det åbenlyse lokalt, og vores CI har en `depends-on`-kobling til CD. SonarCloud's rolle er derfor at fokusere på nylig kode i tråd med continuous delivery, fremfor at gennemgå hele historikken fra dag 1.
+
+Vi kørte analysen i en kort **Trunk Based Development**-session for at få SonarCloud op at køre hurtigt, og skiftede derefter tilbage til GitHub Flow med PR-reviews for selve fixes.
+
+SonarCloud fandt **74 issues** i alt ved første scan.
+
+### Findings vi fixede
+
+| Finding | Fil(er) | Commit |
+|---------|---------|--------|
+| Write/read permissions på workflow-level | `cd.yml`, `ci.yml` | `fix: move workflow permissions to job level` |
+| PostgreSQL credentials hardkodet i kode | `docker-compose.yml` | `fix: move postgres credentials to env variables` |
+| Legacy scripts med hardkodede credentials | `init_db.go`, `queries.go` | `fix: remove legacy migration scripts` |
+| `[` i stedet for `[[` i bash conditionals | `deploy.sh`, `deploy_compose.sh`, `setup.sh`, `migration.sh` | `fix: use [[ ]] instead of [ ]` |
+| Blank import uden forklarende kommentar | `database.go` | `fix: add comment explaining blank import` |
+
+### Findings vi bevidst ignorerede - og hvorfor
+
+| Finding | Begrundelse |
+|---------|-------------|
+| bcrypt hash i `schema.sql` | Det er en hash, ikke et plaintext password. SonarCloud skelner ikke - det ser bare "en streng der ligner et credential i SQL". At fjerne admin-seeden ville bryde login uden alternativ. Bevidst fravalg. |
+| PostgreSQL password i CI-service | Test-databasen lever kun i GitHub Actions under CI-kørslen og er aldrig eksponeret mod omverdenen. At putte det i en secret ville være overkill og gøre CI-konfigurationen sværere at læse. |
+| Flask secret keys i Python-backend | Den gamle Python-implementation er ikke aktiv kode - den er aldrig i produktion. Findings her er irrelevante for vores nuværende stack. |
+| Cognitive Complexity (15+) | SonarCloud's threshold på 15 er arbitrær. Vores Go-handlers er komplekse af funktionelle årsager, ikke dårlig kode. Refaktorering ville fragmentere logik der hører sammen. |
+| String konstanter (`"layout.html"`, `"Internal Server Error"` osv.) | Go-konventioner der bruges direkte i handlers. At udtrække dem som konstanter ville skade læsbarheden uden reel vedligeholdelsesgevinst. |
+| `globalThis` over `window` i HTML | Browser-compatibility micro-optimering der er irrelevant for vores use case. |
+| Text contrast i CSS | Accessibility-forbedring men ikke funktionskritisk i et studieprojekt med begrænset scope. |
+| Terraform SSH åben for alle IP'er | Intentionelt - vi skifter netværk (skole, hjem, VM-adgang) og kan ikke låse til én IP. Alternativet ville bryde adgangen. |
+| `====` konstant i `terraform/inline_commands.sh` | Rent kosmetisk separator i et shell-script. Ingen sikkerhedsmæssig eller funktionel relevans. |
+
+### Eksempel fra vores repo
+- [PR #148 - fix/sonar-issues](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/pull/148)
+
+### Kritisk refleksion over toolet
+
+SonarCloud er et perspektiv, ikke sandheden. Det var tydeligt i denne analyse at toolet opererer på mønstre snarere end kontekst - det kan ikke skelne mellem en bcrypt-hash og et plaintext password, og det ved ikke at vores Python-implementation er inaktiv kode. Uden kritisk stillingtagen ville vi have brugt tid på fixes der enten er meningsløse eller direkte skadelige for vores codebase.
+
+Det mest værdifulde ved SonarCloud var ikke de 74 findings i sig selv, men processen med at gå dem igennem som team og beslutte hvad der faktisk er et problem. Det tvang os til at argumentere for vores kodevalg - og det er en sund DevOps-praksis uanset toolet.
 
 ---
 
@@ -74,7 +110,7 @@ Succesfulde registreringer: tilnærmelsesvis nul i hele perioden.
 #### 🟢 Uptime & Latency
 Backend uptime holder **99.8–100 %** over hele perioden. Request latency p95 er under **0.1 sekunder** på stort set alle endpoints - med én enkelt spike der hurtigt normaliserede sig. Go-migrationen fra Python har tydeligt haft effekt her.
 
-####  Top Search Terms
+#### 🔍 Top Search Terms
 Dashboardet tracker reelle søgetermer: *"apple app store 12-month subscription"*, *"bernie sanders"*, *"is the weather app down"*, *"ja morant team"* - det bekræfter at vores FTS5-søgning bliver ramt af rigtige (eller simulerede) brugere.
 
 ### Hvad vi indså - og hvad der bør fixes
@@ -86,7 +122,7 @@ Dashboardet tracker reelle søgetermer: *"apple app store 12-month subscription"
 | 99.8% uptime | Go-migrationen virker stabilt i prod | Ingen akut handling nødvendig |
 | p95 latency under 0.1s | FTS5 performer godt under load | Behold FTS5, overvåg ved højere traffic |
 
-> *Screenshots fra Grafana (WhoKnows Auth, WhoKnows Overview, WhoKnows Requests) er vedlagt som dokumentation.*
+> 📸 *Screenshots fra Grafana (WhoKnows Auth, WhoKnows Overview, WhoKnows Requests) er vedlagt som dokumentation.*
 
 ---
 
