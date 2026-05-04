@@ -50,6 +50,19 @@ Vi er gået fra nul kendskab til at navigere DevOps-principperne i praksis - uge
 
 Vi integrerede SonarCloud direkte i vores CI-pipeline via GitHub Actions. Vi valgte **"Number of days" (30 dage)** som new code definition fremfor "Previous version" - begrundelsen er at vores pre-commit hook og linting allerede fanger det åbenlyse lokalt, og vores CI har en `depends-on`-kobling til CD. SonarCloud's rolle er derfor at fokusere på nylig kode i tråd med continuous delivery, fremfor at gennemgå hele historikken fra dag 1.
 
+#### Tekniske integrationsudfordringer
+
+Selvom integrationen af SonarCloud ser simpel ud på papiret, mødte vi flere tekniske "roadblocks", der illustrerer kompleksiteten i at få forskellige DevOps-værktøjer til at tale sammen i et monorepo-setup.
+
+| Udfordring | Årsag | Løsning |
+| :--- | :--- | :--- |
+| **Mapping af projekt-stier** | Vores Go-kode ligger i `/implementations/go`, men GitHub Actions kører som standard fra repositoriets rod. Scanneren kunne ikke lokalisere kildefilerne korrekt. | Vi droppede den eksterne `sonar-project.properties` fil og flyttede konfigurationen direkte ind i `ci.yml` via `args`. Vi brugte `projectBaseDir: .` for at tvinge scanneren til at forstå vores monorepo-struktur. |
+| **YAML-syntaks og indentation** | GitHub Actions fejlede med kryptiske fejl ("Invalid workflow file"). | YAML er ekstremt følsom over for mellemrum. En enkelt manglende indrykning i vores SonarCloud-step deaktiverede hele jobbet. Løsningen var en stringent rettelse af mellemrum, så steppet flugtede præcis med de øvrige actions. |
+| **404 fra SonarCloud API** | Scanneren kunne ikke finde vores projekt, selvom tokens var korrekte. | SonarCloud er *case-sensitive*. Vi havde brugt store bogstaver i vores `projectKey`, mens de på platformen var oprettet med små bogstaver. Vi konverterede alt til lowercase i vores workflow-fil for at sikre et match. |
+
+> **Refleksion over integrationsprocessen:**
+> Disse fejl lærte os, at DevOps-arbejde ofte handler ligeså meget om "plumbing" (at forbinde systemer) som om selve koden. Vi indså vigtigheden af eksplicit konfiguration; ved at flytte indstillingerne ind i vores CI-workflow gjorde vi pipelinen mere gennemsigtig og robust, da vi eliminerede afhængigheden af eksterne filer, der let kan blive glemt eller placeret forkert i et monorepo. Det understregede også, at "Infrastructure as Code" kræver samme præcision og debugging-tålmodighed som almindelig softwareudvikling.
+
 Vi kørte analysen i en kort **Trunk Based Development**-session for at få SonarCloud op at køre hurtigt, og skiftede derefter tilbage til GitHub Flow med PR-reviews for selve fixes.
 
 SonarCloud fandt **74 issues** i alt ved første scan.
