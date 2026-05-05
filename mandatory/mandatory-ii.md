@@ -16,7 +16,9 @@ Vi enforcer et **branch protection ruleset på `main`**, som kræver godkendt PR
 - [PR #141](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/pull/141)
 
 ### Refleksion
-GitHub Flow har passet godt til vores arbejdsrytme - vi deployede løbende og havde ikke behov for langtidslevende branches. I et større team eller med flere samtidige releases ville **Trunk Based Development** med feature flags have været interessant at undersøge nærmere, da det presser endnu mere på kontinuerlig integration. Git Flow-eksperimentet var alligevel ikke spildt: det gav os hands-on forståelse for, hvornår en strategi skalerer - og hvornår den bare skaber bureaukrati.
+GitHub Flow har passet godt til vores arbejdsrytme - vi deployede løbende og havde ikke behov for langtidslevende branches. Git Flow-eksperimentet var alligevel ikke spildt: det gav os hands-on forståelse for, hvornår en strategi skalerer - og hvornår den bare skaber bureaukrati.
+
+I forbindelse med SonarCloud-implementationen testede vi kort **Trunk Based Development** i ~24 timer — branch protection ruleset blev midlertidigt deaktiveret, og vi pushede direkte til `main` via pair programming. Det gav hurtig fremdrift i opsætningsfasen, men vi gendannede hurtigt ruleset bagefter. Det bekræftede at TBD kræver høj tillid til teamet og stærke pre-commit hooks som erstatning for PR-reviews — og at det kan give mening i korte, intensive sessioner selv i et lille team.
 
 ---
 
@@ -48,7 +50,16 @@ Vi er gået fra nul kendskab til at navigere DevOps-principperne i praksis - uge
 
 ### Opsætning og konfiguration
 
-Vi integrerede SonarCloud direkte i vores CI-pipeline via GitHub Actions. Vi valgte **"Number of days" (30 dage)** som new code definition fremfor "Previous version" - begrundelsen er at vores pre-commit hook og linting allerede fanger det åbenlyse lokalt, og vores CI har en `depends-on`-kobling til CD. SonarCloud's rolle er derfor at fokusere på nylig kode i tråd med continuous delivery, fremfor at gennemgå hele historikken fra dag 1.
+Vi bruger SonarCloud via **Automatic Analysis** — SonarCloud henter selv koden ved hvert push til GitHub uden at kræve et CI-step. Konkret sker der følgende:
+
+1. Kode pushes til GitHub
+2. GitHub sender automatisk en notifikation til SonarCloud
+3. SonarCloud henter og analyserer koden
+4. Resultater vises på SonarCloud dashboardet
+
+CI-pipelinen håndterer Go build, tests og linting. SonarCloud håndterer kodeanalyse. De to kører uafhængigt af hinanden.
+
+Vi valgte **"Number of days" (30 dage)** som new code definition fremfor "Previous version" - begrundelsen er at vores pre-commit hook og linting allerede fanger det åbenlyse lokalt, og vores CI har en `depends-on`-kobling til CD. SonarCloud's rolle er derfor at fokusere på nylig kode i tråd med continuous delivery, fremfor at gennemgå hele historikken fra dag 1.
 
 #### Tekniske integrationsudfordringer
 
@@ -91,7 +102,6 @@ SonarCloud fandt **74 issues** i alt ved første scan.
 | Terraform SSH åben for alle IP'er | Intentionelt - vi skifter netværk (skole, hjem, VM-adgang) og kan ikke låse til én IP. Alternativet ville bryde adgangen. |
 | `====` konstant i `terraform/inline_commands.sh` | Rent kosmetisk separator i et shell-script. Ingen sikkerhedsmæssig eller funktionel relevans. |
 | SHA-pinning af `golangci-lint-action@v7` | Supply chain security best practice relevant i produktion, men overkill for et studieprojekt. Tags som `@v7` er tilstrækkeligt stabile for vores use case. Acknowledged i SonarCloud. |
-| SHA-pinning af `sonarqube-scan-action@v5` | Samme begrundelse som ovenstående. Acknowledged i SonarCloud. |
 
 ### Eksempler fra vores repo
 - [PR #148 - fix/sonar-issues](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/pull/148)
