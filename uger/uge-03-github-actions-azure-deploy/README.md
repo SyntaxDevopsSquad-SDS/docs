@@ -35,7 +35,7 @@
 | **SSH Key Pair** | **Public key** (deles med server) + **Private key** (holdes hemmelig) - asymmetrisk kryptering |
 | **Public Key** | Krypterer challenges, placeres i `~/.ssh/authorized_keys` på server - kan deles frit |
 | **Private Key** | Dekrypterer challenges, placeres i `~/.ssh/id_rsa` lokalt - må **ALDRIG** deles |
-| **NSG (Network Security Group)** | Azure firewall der definerer inbound/outbound traffic rules med priorities |
+| **NSG (Network Security Group)** | Azure's firewall der kontrollerer netværkstrafik til/fra VM. Består af security rules med **priorities** (lavere nummer = højere prioritet, range 100-4096). Hver rule specificerer: **source** (hvilke IP'er må komme ind), **destination port** (fx 22 for SSH, 8080 for HTTP), **protocol** (TCP/UDP), og **action** (Allow/Deny). Regler evalueres i priority-rækkefølge - første match vinder. Eksempel: Priority 900 tillader SSH (port 22), priority 1001 tillader HTTP (port 8080) |
 | **Static IP** | Fast IP-adresse der ikke ændres ved VM restart - kritisk for DNS og firewall rules |
 | **Push-based Deployment** | CI/CD pusher kode til server via SSH - deployment controlleret fra CI pipeline |
 | **Pull-based Deployment** | Server puller kode fra Git repository - deployment initieret fra server selv |
