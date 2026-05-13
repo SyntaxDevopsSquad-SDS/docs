@@ -51,7 +51,6 @@ Se [noter.md](./noter.md)
 
 **Vores Implementation:**
 - [`.gitignore`](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/blob/main/.gitignore) - Secrets, binaries og dependencies ignoreret
-- [`.env.example`](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/blob/main/implementations/go/backend/.env_example) - Template uden secrets
 - [`README.md`](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/blob/main/README.md) - Conventional Commits i brug
 
 **Eksterne Ressourcer:**
