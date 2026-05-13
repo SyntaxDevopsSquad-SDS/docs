@@ -1,12 +1,10 @@
 # Uge 02 – Conventions, OpenAPI & DotEnv
 
-> 📅 **Dato:** 5. februar
+📅 **Dato:** 5. februar
 
 ---
 
 ## 🎯 Læringsmål
-
-*(Kopiér de relevante punkter fra læringsmål-master.md)*
 
 - [ ] Knows which type of files not to push into version control and why
 - [ ] Can and will create proper commit messages
@@ -21,25 +19,25 @@
 
 | Begreb | Kort forklaring |
 |--------|-----------------|
-| **Conventional Commits** | Standard format for commit messages: `<type>: <description>` - gør Git history læsbar og muliggør automatisk changelog generation |
-| **.gitignore** | Fil der specificerer hvilke filer Git skal ignorere - kritisk for at undgå at committe secrets, binaries og dependencies |
-| **Environment Variables** | Konfiguration der varierer mellem miljøer (dev/prod) - holdes ude af koden for security og flexibility |
-| **.env File** | Fil der indeholder environment variables lokalt - ALDRIG committed til Git |
-| **.env.example** | Template der viser struktur af .env uden rigtige værdier - safe to commit |
-| **OpenAPI Specification** | Maskinlæsbar API dokumentation (tidligere Swagger) - YAML/JSON der beskriver endpoints, request/response formats |
-| **Swagger UI** | Interaktiv API dokumentation genereret fra OpenAPI spec - lader brugere teste endpoints direkte i browseren |
-| **Design-First** | Approach hvor OpenAPI spec skrives først, derefter implementeres API - god til team alignment før coding |
-| **Code-First** | Approach hvor kode skrives først, spec genereres automatisk - hurtigere at komme igang |
-| **Monorepo** | Alle projekter i ét Git repository - fordel: atomic commits, shared tooling, easy refactoring |
-| **Polyrepo** | Separate repositories per service - fordel: independent deployment, granular permissions |
-| **Naming Conventions** | Standarder for at navngive filer, functions, variables - Go: camelCase, SQL: snake_case |
-| **Exported vs Unexported (Go)** | Uppercase = public (kan importeres), lowercase = private (kun synlig i samme package) |
-| **PascalCase** | FirstLetterUppercase - bruges til exported Go types |
-| **camelCase** | firstLetterLowercase - bruges til unexported Go functions/variables |
-| **snake_case** | all_lowercase_with_underscores - bruges til database columns, .env variables (ALL_CAPS) |
-| **kebab-case** | all-lowercase-with-hyphens - bruges til branch names, URLs |
-| **godotenv** | Go package til at loade .env filer - loader environment variables fra fil ind i `os.Getenv()` |
-| **Twelve-Factor App** | Metodologi for cloud-native apps - #3 "Config": Store config in environment, strict separation fra code |
+| **Conventional Commits** | Standard format for commit messages: `<type>: <description>` (fx `feat:`, `fix:`, `docs:`) - gør Git history læsbar og muliggør automatisk changelog generation |
+| **.gitignore** | Fil der specificerer hvilke filer Git skal ignorere - kritisk for at undgå at committe secrets (`.env`), binaries (`*.db`), og dependencies (`node_modules/`) |
+| **Environment Variables** | Konfiguration der varierer mellem miljøer (dev/prod) - holdes ude af koden for security og flexibility. Tilgås via `os.Getenv()` i Go |
+| **.env File** | Fil der indeholder environment variables lokalt (fx `SECRET_KEY=abc123`) - **ALDRIG** committed til Git |
+| **.env.example** | Template der viser struktur af .env uden rigtige værdier - safe to commit, bruges til onboarding |
+| **OpenAPI Specification** | Maskinlæsbar API dokumentation (tidligere Swagger) - YAML/JSON der beskriver endpoints, request/response formats, og data models |
+| **Swagger UI** | Interaktiv API dokumentation genereret fra OpenAPI spec - lader brugere teste endpoints direkte i browseren uden Postman |
+| **Design-First** | Approach hvor OpenAPI spec skrives først, derefter implementeres API - god til team alignment og kontraktdefinition før coding |
+| **Code-First** | Approach hvor kode skrives først, spec genereres automatisk fra annotations - hurtigere at komme igang, god til prototyper |
+| **Monorepo** | Alle projekter i ét Git repository - fordele: atomic commits på tværs af services, shared tooling (CI/CD), nemmere refactoring |
+| **Polyrepo** | Separate repositories per service - fordele: independent deployment cycles, granular permissions, separate CI/CD |
+| **Naming Conventions** | Standarder for at navngive filer, functions, variables - **Go**: camelCase, **SQL**: snake_case, **Env vars**: ALL_CAPS_SNAKE_CASE |
+| **Exported vs Unexported (Go)** | **Uppercase** første bogstav = public/exported (kan importeres fra andre packages). **Lowercase** = private/unexported (kun synlig i samme package) |
+| **PascalCase** | `FirstLetterUppercase` - bruges til exported Go types og struct names |
+| **camelCase** | `firstLetterLowercase` - bruges til unexported Go functions/variables |
+| **snake_case** | `all_lowercase_with_underscores` - bruges til SQL table/column names og filnavne |
+| **kebab-case** | `all-lowercase-with-hyphens` - bruges til branch names (`feature/user-auth`) og URLs |
+| **godotenv** | Go package til at loade .env filer - loader environment variables fra fil ind i `os.Getenv()`. Import: `github.com/joho/godotenv` |
+| **Twelve-Factor App** | Metodologi for cloud-native apps - **Principle #3 "Config"**: Store config i environment (ikke hardcoded), strict separation fra code |
 
 ---
 
@@ -51,41 +49,17 @@ Se [noter.md](./noter.md)
 
 ## 🔗 Ressourcer
 
-**Slides:** *(tilføj link fra undervisernes repo)*
-**Topics**
-
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/02._Conventions_OpenAPI_DotEnv/02._conventions.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/02._Conventions_OpenAPI_DotEnv/03._openapi.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/02._Conventions_OpenAPI_DotEnv/04._monolith_monorepo_multirepo.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/02._Conventions_OpenAPI_DotEnv/05._environment_variables.md
-- 
-**Before class Assignments**
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/02._Conventions_OpenAPI_DotEnv/01._Before/learn_branching.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/02._Conventions_OpenAPI_DotEnv/01._Before/git_advanced.md
-- **Get aquainted with how to setup SQLite and create all the WhoKnows queries in Go and Ruby**
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/02._Conventions_OpenAPI_DotEnv/01._Before/go_and_ruby_sqlite_setup.md
-- 
-**After class**
-  - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/02._Conventions_OpenAPI_DotEnv/02._After/commence_the_rewrite.md
-  - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/02._Conventions_OpenAPI_DotEnv/02._After/generate_openapi_specification.md
-  - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/02._Conventions_OpenAPI_DotEnv/02._After/generate_openapi_spec_in_postman.md
-
-
 **Vores Implementation:**
-- `.gitignore` - [GitHub](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/blob/main/.gitignore)
-- `.env.example` - [GitHub](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/blob/main/implementations/go/backend/.env_example)
-- `README.md` Conventional Commits - [GitHub](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/blob/main/README.md)
-- Monorepo Structure - [Project Root](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad)
+- [`.gitignore`](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/blob/main/.gitignore) - Secrets, binaries og dependencies ignoreret
+- [`.env.example`](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/blob/main/implementations/go/backend/.env_example) - Template uden secrets
+- [`README.md`](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/blob/main/README.md) - Conventional Commits i brug
 
-**Eksterne Links:**
-- [Conventional Commits Standard](https://www.conventionalcommits.org/)
+**Eksterne Ressourcer:**
+- [Conventional Commits](https://www.conventionalcommits.org/)
 - [OpenAPI Specification](https://swagger.io/specification/)
-- [Swagger Editor](https://editor.swagger.io/) - Online OpenAPI editor
-- [The Twelve-Factor App](https://12factor.net/config) - Config principles
-- [Go Effective Naming](https://go.dev/doc/effective_go#names) - Official Go docs
+- [The Twelve-Factor App](https://12factor.net/config)
 
 ---
 
 ## 🧩 Se også i emner/
 
-*(Hvilke tværgående emner dækker denne uge?)*
