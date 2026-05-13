@@ -6,8 +6,6 @@
 
 ## 🎯 Læringsmål
 
-
-
 - [ ] Understands the terminology surrounding GitHub Actions such as workflows, runners, jobs, steps, and actions
 - [ ] Can create a basic GitHub Action workflow that is triggered by a push and pull request
 - [ ] Understands basic cloud concepts
@@ -23,30 +21,25 @@
 | Begreb | Kort forklaring |
 |--------|-----------------|
 | **GitHub Actions** | CI/CD platform integreret i GitHub - automatiserer workflows som build, test og deployment |
-| **Workflow** | YAML-fil i `.github/workflows/` der definerer automated proces - trigger, jobs og steps |
-| **Runner** | Server der eksekverer workflows - GitHub-hosted (Ubuntu, Windows, macOS) eller self-hosted |
-| **Job** | Samling af steps der kører på samme runner - kan køre parallelt eller sekventielt |
-| **Step** | Individuel task i et job - kører kommandoer eller actions |
-| **Action** | Genbrugelig kodeblok - fra Marketplace eller custom (fx `actions/checkout@v4`) |
+| **Workflow** | YAML-fil i `.github/workflows/` der definerer automatiseret proces med triggers, jobs og steps |
+| **Runner** | Server der eksekverer workflows - enten GitHub-hosted (Ubuntu/Windows/macOS) eller self-hosted |
+| **Job** | Samling af steps der kører på samme runner - jobs kan køre parallelt eller sekventielt |
+| **Step** | Individuel task i et job - kører enten kommandoer eller actions |
+| **Action** | Genbrugelig kodeblok fra Marketplace eller custom (fx `actions/checkout@v4`) |
 | **Trigger** | Event der starter workflow - `push`, `pull_request`, `schedule`, `workflow_dispatch` |
-| **Matrix Build** | Parallel eksekvering på tværs af versioner/OS - fx test på Go 1.21, 1.22, 1.23 |
-| **GitHub Secrets** | Krypteret storage til sensitive data - API keys, tokens, passwords |
-| **Cloud Computing** | On-demand adgang til compute resources over internet - pay-as-you-go model |
-| **Virtual Machine (VM)** | Emuleret computer der kører på fysisk hardware - isoleret OS og resources |
-| **Azure** | Microsofts cloud platform - compute, storage, networking services |
-| **SSH (Secure Shell)** | Krypteret netværksprotokol til sikker remote server adgang |
-| **SSH Key Pair** | Public key (deles med server) + Private key (holdes hemmelig) - asymmetrisk kryptering |
-| **Public Key** | Krypterer data, kan deles frit - placeres i `~/.ssh/authorized_keys` på server |
-| **Private Key** | Dekrypterer data, må ALDRIG deles - placeres i `~/.ssh/id_rsa` lokalt |
-| **NSG (Network Security Group)** | Azure firewall - definerer inbound/outbound traffic rules med priorities |
-| **systemd** | Linux service manager - starter services ved boot, genstarter ved crash |
-| **systemd Service** | Background proces managed af systemd - defineret i `.service` fil |
-| **Push-based Deployment** | CI/CD pusher kode til server via SSH/SCP - deployment controlleret fra CI |
-| **Pull-based Deployment** | Server puller kode fra Git repository - deployment initieret fra server selv |
-| **Git Pull Deployment** | Server kører `git pull` og genstarter service - kræver repository på server |
-| **Docker Pull Deployment** | Server puller Docker image og kører container - ingen kodebase på server |
+| **GitHub Secrets** | Krypteret storage til sensitive data - API keys, tokens, passwords (aldrig hardcoded) |
+| **Cloud Computing** | On-demand adgang til compute resources over internet - pay-as-you-go model (IaaS, PaaS, SaaS) |
+| **Virtual Machine** | Emuleret computer på fysisk hardware - isoleret OS og resources, kan køre hvilket som helst OS |
+| **Azure** | Microsofts cloud platform - compute (VMs), storage, networking, databases |
+| **SSH (Secure Shell)** | Krypteret protokol til sikker remote server adgang - bruger key pair authentication |
+| **SSH Key Pair** | **Public key** (deles med server) + **Private key** (holdes hemmelig) - asymmetrisk kryptering |
+| **Public Key** | Krypterer challenges, placeres i `~/.ssh/authorized_keys` på server - kan deles frit |
+| **Private Key** | Dekrypterer challenges, placeres i `~/.ssh/id_rsa` lokalt - må **ALDRIG** deles |
+| **NSG (Network Security Group)** | Azure firewall der definerer inbound/outbound traffic rules med priorities |
 | **Static IP** | Fast IP-adresse der ikke ændres ved VM restart - kritisk for DNS og firewall rules |
-| **Port Forwarding** | Åbne ports i firewall for at eksponere services til internet |
+| **Push-based Deployment** | CI/CD pusher kode til server via SSH - deployment controlleret fra CI pipeline |
+| **Pull-based Deployment** | Server puller kode fra Git repository - deployment initieret fra server selv |
+| **Docker Pull Deployment** | Server puller Docker image og kører container - ingen kodebase på server (bedst practice) |
 
 ---
 
@@ -58,56 +51,25 @@ Se [noter.md](./noter.md)
 
 ## 🔗 Ressourcer
 
-**Pensum:**
-- Introduction
-- GitHub Actions
-- GitHub Issues Workflow
-- GitHub Secrets
-- Azure
-- More Cloud
-- SSH
-- Deployment Considerations
-
-**Topics**
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/02._github_actions.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/03._github_issues_workflow.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/04._github_secrets.md
-- [EK Azure Resources](https://github.com/anderslatif/EK_Azure)
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/05._azure.md
-
-**Other cloud services and cloud providers**
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/06._more_cloud.md
-
-**More about SSH**
-  - https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/07._ssh.md
-
-**Deployment considerations**
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/08._deployment_considerations.md
-
-**Read about GitHub Actions**
-- Motivation: Learn the correct terminology surrounding GitHub Actions.
-- https://docs.github.com/en/actions/get-started/understand-github-actions
-
-** How to create a PR template in Github**
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/03._Github_Actions_Cloud_Azure_Deploy/01._Before/github_pr_template.md
+**Kursusmateriale:**
+- [GitHub Actions Introduction](https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/02._github_actions.md)
+- [Azure & Cloud Concepts](https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/05._azure.md)
+- [SSH Deep Dive](https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/07._ssh.md)
+- [Deployment Strategies](https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/03._Github_Actions_Cloud_Azure_Deploy/08._deployment_considerations.md)
 
 **Vores Implementation:**
-- `.github/workflows/ci.yml` - [GitHub](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/blob/main/.github/workflows/ci.yml)
-- `.github/workflows/cd.yml` - [GitHub](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/blob/main/.github/workflows/cd.yml)
-- Azure VM Setup - [Deployment Notes](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/blob/main/server-config/deployment.md)
+- [CI Workflow](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/blob/main/.github/workflows/ci.yml) - Build, test og lint
+- [CD Workflow](https://github.com/SyntaxDevopsSquad-SDS/devops-syntaxsquad/blob/main/.github/workflows/cd.yml) - Deployment til Azure VM
 
-
-**Eksterne Links:**
-- [SSH Key Guide](https://www.ssh.com/academy/ssh/keygen)
-
+**Eksterne Ressourcer:**
+- [GitHub Actions Documentation](https://docs.github.com/en/actions)
+- [Azure for Students](https://azure.microsoft.com/en-us/free/students/)
 
 ---
 
 ## 🧩 Se også i emner/
 
-*(Hvilke tværgående emner dækker denne uge?)*
-
-- **CI/CD** - GitHub Actions workflows
-- **Cloud Infrastructure** - Azure VM management
-- **Security** - SSH keys, port management
-- **Deployment Strategies** - Push vs pull-based
+- **CI/CD** - GitHub Actions workflows og automation
+- **Cloud Infrastructure** - Azure VM management og networking
+- **Security** - SSH keys, secrets management, port configuration
+- **Deployment** - Push vs pull-based strategies
