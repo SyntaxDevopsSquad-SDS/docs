@@ -69,7 +69,4 @@ Se [noter.md](./noter.md)
 
 ## 🧩 Se også i emner/
 
-- **CI/CD** - GitHub Actions workflows og automation
-- **Cloud Infrastructure** - Azure VM management og networking
-- **Security** - SSH keys, secrets management, port configuration
-- **Deployment** - Push vs pull-based strategies
+
