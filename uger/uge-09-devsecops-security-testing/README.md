@@ -61,18 +61,7 @@
 *Se [noter.md](./noter.md)*
 
 ## 🔗 Ressourcer
-- Slides:
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/09._Testing_Security/02._devsecops.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/09._Testing_Security/03._docker_firewalls.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/09._Testing_Security/04._security_in_github.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/09._Testing_Security/05_continuous_testing.md
-- Opgaver:
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/09._Testing_Security/01._introduction.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/09._Testing_Security/02._After/fail2ban.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/09._Testing_Security/02._After/harden_yourself.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/09._Testing_Security/02._After/security_breach.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/09._Testing_Security/02._After/setup_https.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/09._Testing_Security/02._After/implement_tests.md
+
 
 ## 🧩 Se også i emner/
 - **[emner/devsecops-shift-left.md](../../emner/devsecops-shift-left.md)** - DevSecOps principper, Shift-Left mentalitet, Security Gates i CI/CD
