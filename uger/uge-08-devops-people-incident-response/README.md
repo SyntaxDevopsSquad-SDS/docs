@@ -42,20 +42,7 @@
 *Se [noter.md](./noter.md)*
 
 ## 🔗 Ressourcer
-- Slides:
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/08._Continuous_Deployment/02._devops.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/08._Continuous_Deployment/03._devops_is_people.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/08._Continuous_Deployment/04._incident_response_postmortem.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/08._Continuous_Deployment/05._continuous_deployment.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/08._Continuous_Deployment/06._reverse_proxies.md
-- Opgaver: 
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/01._Introduction/02._After/problems_with_the_codebase.md?plain=1#L19
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/08._Continuous_Deployment/02._After/continuous_deployment.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/08._Continuous_Deployment/02._After/fts5.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/08._Continuous_Deployment/02._After/postmortem.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/08._Continuous_Deployment/02._After/smoke_testing.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/08._Continuous_Deployment/02._After/user_feedback_survey.md
-- https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/01._Assignments/08._Continuous_Deployment/02._After/hadolint.md
+
 
 ## 🧩 Se også i emner/
 *(Hvilke tværgående emner dækker denne uge?)*
