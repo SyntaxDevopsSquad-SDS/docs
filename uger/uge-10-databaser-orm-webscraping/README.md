@@ -44,10 +44,7 @@
 ---
 
 ## 🔗 Ressourcer
-- **Course Material:** [https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring]
-- **Slides:** - Databases & ORM: [https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/10._Databases_ORM_Data_scraping_Web_crawling/02._databases_orm.md]
-    - Migrations: [https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/10._Databases_ORM_Data_scraping_Web_crawling/03._migrations.md]
-    - Web Scraping: [https://github.com/who-knows-inc/EK_DAT_DevOps_2026_Spring/blob/main/00._Course_Material/02._Slides/10._Databases_ORM_Data_scraping_Web_crawling/05._web_scraping_web_crawling.md]
+
 
 ---
 
