@@ -1,4 +1,4 @@
-# Uge 01 – Introduktion, Git & Legacy Project
+# Uge 01 - Introduktion, Git & Legacy Project
 > 📅 Dato: 29. januar 2026
 
 ## 🎯 Læringsmål
