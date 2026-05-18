@@ -30,5 +30,5 @@
 - Legacy projekt: [whoknows_variations](https://github.com/who-knows-inc/whoknows_variations)
 
 ## 🧩 Se også i emner/
-- [devops-kultur.md](../../emner/devops-kultur.md) — Hvad er DevOps?
+- [devops-kultur.md](../../emner/devops-kultur.md) - Hvad er DevOps?
 - [ci-cd.md](../../emner/ci-cd.md) - Git, SSH og server troubleshooting
