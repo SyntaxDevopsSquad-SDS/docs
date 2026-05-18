@@ -1,7 +1,7 @@
 # ✅ Læringsmål – Master Tjekliste
 
 > Sæt kryds efterhånden som du er tryg ved at forklare emnet mundtligt.
-> Målet er ikke at læse — det er at **kunne forklare**.
+> Målet er ikke at læse - det er at **kunne forklare**.
 
 ---
 
