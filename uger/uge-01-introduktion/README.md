@@ -11,8 +11,8 @@
 ## 📌 Kernebegreber
 | Begreb | Kort forklaring |
 |--------|----------------|
-| SSH | Secure Shell — fjernforbindelse til server |
-| SCP | Secure Copy — kopier filer til/fra server |
+| SSH | Secure Shell - fjernforbindelse til server |
+| SCP | Secure Copy - kopier filer til/fra server |
 | `ps aux` | List alle kørende processer |
 | `lsof -i` | List åbne netværksforbindelser |
 | `netstat -tuln` | Vis åbne porte |
@@ -20,7 +20,7 @@
 | Source code archaeology | Processen med at analysere og forstå gammel kode |
 | Dependency graph | Digraph der viser afhængigheder mellem systemets dele |
 | 2to3 | Værktøj der konverterer Python 2 kode til Python 3 |
-| Makefile | Build automation fil — `make run` kører definerede kommandoer |
+| Makefile | Build automation fil - `make run` kører definerede kommandoer |
 
 ## 📝 Egne noter
 *Se [noter.md](./noter.md)*
@@ -31,4 +31,4 @@
 
 ## 🧩 Se også i emner/
 - [devops-kultur.md](../../emner/devops-kultur.md) — Hvad er DevOps?
-- [ci-cd.md](../../emner/ci-cd.md) — Git, SSH og server troubleshooting
+- [ci-cd.md](../../emner/ci-cd.md) - Git, SSH og server troubleshooting
