@@ -82,9 +82,11 @@ Når vi tester systemets stabilitet eller overvåger vores simulerede brugertraf
 * **Produktionsmiljø (Azure VM):**
     * *Kommando*: `ssh user@<azure-vm-ip>`
     * *Formål*: Bruges til at tjekke Nginx reverse proxy konfiguration, se aktive app-logs (`docker compose logs go-app`), efterse PostgreSQL-databasen eller fejlfinde deployments fra GitHub Actions.
+    
 * **Monitoreringsmiljø (DigitalOcean VM):**
     * *Kommando*: `ssh user@<digitalocean-vm-ip>`
     * *Formål*: Bruges til at tjekke Prometheus scraping, Grafana dashboards samt kontrollere vores Watchdog cron job.
+    
 * **Overvågning af Bruger- og Login-simulering (Hvor bots kører):**
     * *Kommando*: `ssh user@<bot-server-ip>`
     * *Formål*: For at få fuld synlighed over den simulerede brugertrafik, logger vi direkte ind via SSH på den server, hvor vores bots afvikles. Her kan vi udtrække og inspicere **logs** over de handlinger, botsene udfører – herunder hvornår de simulerer normale brugere, der tilgår sitet, logger ind/ud, eller foretager søgninger.
