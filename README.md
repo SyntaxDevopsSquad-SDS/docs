@@ -88,6 +88,6 @@ Når vi tester systemets stabilitet eller overvåger vores simulerede brugertraf
     * *Formål*: Bruges til at tjekke Prometheus scraping, Grafana dashboards samt kontrollere vores Watchdog cron job.
     
 * **Overvågning af Bruger- og Login-simulering (Hvor bots kører):**
-    * *Kommando*: `ssh user@<bot-server-ip>`
+    * *Kommando*: `ssh user@165.227.145.80`
     * *Formål*: For at få fuld synlighed over den simulerede brugertrafik, logger vi direkte ind via SSH på den server, hvor vores bots afvikles. Her kan vi udtrække og inspicere **logs** over de handlinger, botsene udfører – herunder hvornår de simulerer normale brugere, der tilgår sitet, logger ind/ud, eller foretager søgninger.
     * *Selvhelbredende arkitektur*: Det er også herfra, at vores automatiske Watchdog pinger appen hvert 5. minut og via SSH logger ind på Azure VM'en for at genstarte Go-containeren, hvis systemet ikke svarer.
