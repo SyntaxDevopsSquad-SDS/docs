@@ -75,3 +75,17 @@ Disse filer er vores primære eksamenshjælp — censor spørger i emner, ikke u
 2. Brug [quiz.md](./quiz.md) til at øve mundtlige svar (parvis eller alene)
 3. Opdater [læringsmål-master.md](./læringsmål-master.md) løbende
 4. Brug [emner/](./emner/) mappen til dybere forståelse og eksamenstræning
+
+### 🔒 SSH- og Infrastruktur-Fejlsøgning 
+Når vi tester systemets stabilitet eller overvåger vores simulerede brugertrafik (bots), bruger vi SSH til at tilgå vores cloud-miljøer:
+
+* **Produktionsmiljø (Azure VM):**
+    * *Kommando*: `ssh user@<azure-vm-ip>`
+    * *Formål*: Bruges til at tjekke Nginx reverse proxy konfiguration, se aktive app-logs (`docker compose logs go-app`), efterse PostgreSQL-databasen eller fejlfinde deployments fra GitHub Actions.
+* **Monitoreringsmiljø (DigitalOcean VM):**
+    * *Kommando*: `ssh user@<digitalocean-vm-ip>`
+    * *Formål*: Bruges til at tjekke Prometheus scraping, Grafana dashboards samt kontrollere vores Watchdog cron job.
+* **Overvågning af Bruger- og Login-simulering (Hvor bots kører):**
+    * *Kommando*: `ssh user@<bot-server-ip>`
+    * *Formål*: For at få fuld synlighed over den simulerede brugertrafik, logger vi direkte ind via SSH på den server, hvor vores bots afvikles. Her kan vi udtrække og inspicere **logs** over de handlinger, botsene udfører – herunder hvornår de simulerer normale brugere, der tilgår sitet, logger ind/ud, eller foretager søgninger.
+    * *Selvhelbredende arkitektur*: Det er også herfra, at vores automatiske Watchdog pinger appen hvert 5. minut og via SSH logger ind på Azure VM'en for at genstarte Go-containeren, hvis systemet ikke svarer.
