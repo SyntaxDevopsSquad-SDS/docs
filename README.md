@@ -21,17 +21,17 @@ Formål: Samle pensum, tracke læringsmål og øve os til mundtlig eksamen. Denn
 | Uge | Dato | Emne | Status |
 |-----|------|------|--------|
 | [01](./uger/uge-01-introduktion/) | 29. jan | Introduktion, Git, Legacy Project | ✅ |
-| [02](./uger/uge-02-conventions/) | 5. feb | Conventions, OpenAPI, DotEnv, Monorepo | ✅ |
-| [03](./uger/uge-03-github-actions/) | 12. feb | GitHub Actions, Azure, Cloud, Deploy | ✅ |
-| [04](./uger/uge-04-software-quality/) | 19. feb | Software Quality, Linting, CI/CD, Branching | ✅ |
-| [05](./uger/uge-05-docker/) | 26. feb | Docker, Dockerfile, Build Tools, Virtualization | ✅ |
-| [06](./uger/uge-06-docker-compose/) | 5. mar | Docker Compose, Continuous Delivery, Agile | ✅ |
-| [07](./uger/uge-07-devops-historie/) | 12. mar | DevOps Historie, Psychological Safety | ✅ |
-| [08](./uger/uge-08-devops-people/) | 19. mar | DevOps is People, Postmortem, Continuous Deployment | ✅ |
-| [09](./uger/uge-09-devsecops/) | 26. mar | DevSecOps, SAST/DAST, fail2ban, Shift-Left | ✅ |
-| [10](./uger/uge-10-databaser/) | 9. apr | Databaser, ORM, Migrations, Web Scraping | ✅ |
+| [02](./uger/uge-02-conventions-openapi-dotenv/) | 5. feb | Conventions, OpenAPI, DotEnv, Monorepo | ✅ |
+| [03](./uger/uge-03-github-actions-azure-deploy/) | 12. feb | GitHub Actions, Azure, Cloud, Deploy | ✅ |
+| [04](./uger/uge-04-software-quality-linting-ci/) | 19. feb | Software Quality, Linting, CI/CD, Branching | ✅ |
+| [05](./uger/uge-05-docker-dockerfile/) | 26. feb | Docker, Dockerfile, Build Tools, Virtualization | ✅ |
+| [06](./uger/uge-06-docker-compose-continuous-delivery/) | 5. mar | Docker Compose, Continuous Delivery, Agile | ✅ |
+| [07](./uger/uge-07-devops-history-agile/) | 12. mar | DevOps Historie, Psychological Safety | ✅ |
+| [08](./uger/uge-08-devops-people-incident-response/) | 19. mar | DevOps is People, Postmortem, Continuous Deployment | ✅ |
+| [09](./uger/uge-09-devsecops-security-testing/) | 26. mar | DevSecOps, SAST/DAST, fail2ban, Shift-Left | ✅ |
+| [10](./uger/uge-10-databaser-orm-webscraping/) | 9. apr | Databaser, ORM, Migrations, Web Scraping | ✅ |
 | [11](./uger/uge-11-monitoring-logging/) | 16. apr | Logging, Monitoring, KPIs, Prometheus + Grafana | ✅ |
-| [12](./uger/uge-12-iac/) | 23. apr | IaC, Terraform, Serverless | ✅ |
+| [12](./uger/uge-12-iac-terraform/) | 23. apr | IaC, Terraform, Serverless | ✅ |
 | [13](./uger/uge-13-orchestration/) | 29. apr | Orchestration, Kubernetes, Resilience, Maintenance | ✅ |
 
 Status-nøgle: ✅ Gennemgået og noter klar · 🔄 I gang · ⬜ Ikke startet
