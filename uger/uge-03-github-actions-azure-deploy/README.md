@@ -39,7 +39,7 @@
 | **Static IP** | Fast IP-adresse der ikke ændres ved VM restart - kritisk for DNS og firewall rules |
 | **Push-based Deployment** | CI/CD pusher kode til server via SSH - deployment controlleret fra CI pipeline |
 | **Pull-based Deployment** | Server puller kode fra Git repository - deployment initieret fra server selv |
-| **Docker Pull Deployment** | Server puller Docker image og kører container - ingen kodebase på server (bedst practice) |
+| **Docker Pull Deployment** | Server puller Docker image og kører container - ingen kodebase på server (best practice) |
 
 ---
 
