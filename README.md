@@ -29,10 +29,10 @@ Formål: Samle pensum, tracke læringsmål og øve os til mundtlig eksamen. Denn
 | [07](./uger/uge-07-devops-historie/) | 12. mar | DevOps Historie, Psychological Safety | ✅ |
 | [08](./uger/uge-08-devops-people/) | 19. mar | DevOps is People, Postmortem, Continuous Deployment | ✅ |
 | [09](./uger/uge-09-devsecops/) | 26. mar | DevSecOps, SAST/DAST, fail2ban, Shift-Left | ✅ |
-| [10](./uger/uge-10-databaser/) | 9. apr | Databaser, ORM, Migrations, Web Scraping | 🔄 |
+| [10](./uger/uge-10-databaser/) | 9. apr | Databaser, ORM, Migrations, Web Scraping | ✅ |
 | [11](./uger/uge-11-monitoring-logging/) | 16. apr | Logging, Monitoring, KPIs, Prometheus + Grafana | ✅ |
-| [12](./uger/uge-12-iac/) | 23. apr | IaC, Terraform, Serverless | 🔄 |
-| [13](./uger/uge-13-orchestration/) | 29. apr | Orchestration, Kubernetes, Resilience, Maintenance | 🔄 |
+| [12](./uger/uge-12-iac/) | 23. apr | IaC, Terraform, Serverless | ✅ |
+| [13](./uger/uge-13-orchestration/) | 29. apr | Orchestration, Kubernetes, Resilience, Maintenance | ✅ |
 
 Status-nøgle: ✅ Gennemgået og noter klar · 🔄 I gang · ⬜ Ikke startet
 
